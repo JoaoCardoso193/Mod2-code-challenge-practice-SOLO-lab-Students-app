@@ -1,0 +1,13 @@
+<h1>Instructor Show Page</h1>
+<label>Name:</label>
+<%=@instructor.name%>
+<br>
+<label>Students:</label>
+<ul>
+<%for student in @instructor.alphabetical_students%>
+    <li><%=link_to student.name, student_path(student)%>
+<%end%>
+</ul>
+<br>
+<label>Average Age of Students:</label>
+<%=@instructor.average_student_age%>

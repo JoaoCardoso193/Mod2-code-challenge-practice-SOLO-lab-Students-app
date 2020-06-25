@@ -1,0 +1,17 @@
+<% if flash[:errors] %>
+    <ul>
+    <% flash[:errors].each do |error| %>
+        <li style="color: red">
+            <%= error%>
+        </li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @student do |f| %>
+    Name: <%= f.text_field :name %><br />
+    Major: <%= f.text_field :major %><br />
+    Instructor: <%= f.collection_select :instructor_id, @instructors, :id, :name %><br />
+    Age: <%= f.number_field :age %><br />
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Student Show Page</h1>
+<label>Name:</label>
+<%=@student.name%>
+<br>
+<label>Instructor:</label>
+<%=link_to @student.instructor.name, instructor_path(@student.instructor)%>
